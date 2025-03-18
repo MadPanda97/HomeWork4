@@ -3,6 +3,25 @@ package main
 import "fmt"
 
 func main() {
+	var (
+		string1 = "hi, how are u?"
+		string2 = "hi, Arni"
+	)
+	var LongestCommonPrefix []rune
+
+	MinLength := len(string1)
+	if len(string2) < MinLength {
+		MinLength = len(string2)
+	}
+
+	for i := 0; i < MinLength; i++ {
+		if string1[i] != string2[i] {
+			break
+
+		}
+		LongestCommonPrefix = append(LongestCommonPrefix, rune(string1[i]))
+	}
+	fmt.Println(string(LongestCommonPrefix))
 	matrix := [3][4]int{{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}}
 
 	var zeroRows, zeroCols []int
