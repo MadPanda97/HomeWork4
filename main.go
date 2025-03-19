@@ -6,6 +6,7 @@ import (
 
 func longestCommonPrefix(strs []string) []rune {
 	if len(strs) == 0 {
+		
 		return []rune{}
 	}
 
@@ -16,11 +17,13 @@ search:
 		V := strs[0][i]
 		for j := 1; j < len(strs); j++ {
 			if i >= len(strs[j]) || strs[j][i] != V {
+				
 				break search
 			}
 		}
 		prefix = append(prefix, rune(V))
 	}
+
 	return prefix
 }
 
